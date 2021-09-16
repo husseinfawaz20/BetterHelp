@@ -1,0 +1,35 @@
+<mat-toolbar color="primary" class="app-header">
+    <div><a routerLink="/adminhome" class="positronx">BetterHelp</a></div>
+  </mat-toolbar>
+  <router-outlet></router-outlet>
+
+
+<br><br><br><br><br><br>
+<h1><b> Families : </b></h1>
+
+<table id="families" border="1">
+    <tr>
+      <th *ngFor="let col of columns">{{col}}</th>
+    </tr>
+    <tr *ngFor="let admin of families; let i=index">
+      <td>   {{admin.PF_ID}}  </td>
+      <td>  {{admin.FAMILY_NAME}}  </td>
+      <td >  {{admin.FATHER_NAME}} </td>
+      <td>  {{admin.NUMBER_OF_MEMBERS}} </td>
+      <td>  {{admin.PHONE_NUMBER}} </td>
+      <td>  {{admin.STATE}} </td>
+      <td>
+        <button mat-stroked-button color="accent" class="btn-block" routerLink="/viewfamilyreport"
+        [queryParams]="{id: admin_id,pf_id: admin.PF_ID}">View</button>
+
+      </td>
+      <td >
+        <button mat-raised-button   (click)="onDeleteFamily(admin.PF_ID)" color="accent" class="btn-block"
+         [queryParams]="{id: admin_id}" >Delete</button>
+      </td>
+
+    </tr>
+  </table>
+<br><br><br>
+  <button mat-stroked-button color="accent" class="btn-block" routerLink="/adminhome"
+  [queryParams]="{id: admin_id}">Back</button>

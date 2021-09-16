@@ -1,0 +1,56 @@
+<mat-toolbar color="primary" class="app-header">
+  <div><a routerLink="/" class="positronx">BetterHelp</a></div>
+  <span class="nav-tool-items">
+    <a mat-button routerLink="/" routerLinkActive="active">Log in</a>
+    <a mat-button  mat-raised-button routerLink="aboutus" routerLinkActive="active">About Us</a>
+  </span>
+</mat-toolbar>
+<router-outlet></router-outlet>
+
+
+<mat-card>
+</mat-card>
+<div class="login-wrapper" fxLayout="row" fxLayoutAlign="space-around center">
+
+
+  <div> <img src='../../assets/img/login.jpg' width="300px" alt="BetterHelp" > </div>
+
+
+<div  fxLayout="row" fxLayoutAlign="center center">
+
+
+
+    <mat-card class="box">
+      <mat-card-header>
+        <mat-card-title>Log in</mat-card-title>
+      </mat-card-header>
+
+      <form class="example-form" [formGroup]="login" (ngSubmit)="onLoginClick()">
+        <mat-card-content>
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="Username" formControlName="email">
+          </mat-form-field>
+
+          <mat-form-field class="example-full-width">
+            <input type="password" matInput placeholder="Password" formControlName="password">
+          </mat-form-field>
+
+          <mat-form-field class="example-full-width">
+            <mat-label>Choose your Role </mat-label>
+            <mat-select (selectionChange)="changeValue($event)" formControlName="role">
+              <mat-option [value]="roles" *ngFor="let roles of Roles">{{roles}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+
+
+
+        </mat-card-content>
+       <button  (click)="onLoginClick()" type="button" mat-stroked-button color="primary" class="btn-block"  routerLinkActive="active">Log in</button>
+      </form>
+    </mat-card>
+
+  </div>
+  <router-outlet></router-outlet>
+
+

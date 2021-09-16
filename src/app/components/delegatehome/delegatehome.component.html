@@ -1,0 +1,43 @@
+<mat-toolbar color="primary" class="app-header">
+  <div><a routerLink="delegatehome" class="positronx">BetterHelp</a></div>
+  <span class="nav-tool-items">
+    <a mat-button routerLink="/"  mat-raised-button routerLinkActive="active">Log Out</a>
+  </span>
+</mat-toolbar>
+<router-outlet></router-outlet>
+
+
+
+<br><br>
+<br><br>
+<h1> <b>Welcome DELEGATOR-{{d_id}}</b></h1>
+<div fxLayout="row" fxLayoutAlign="center center" >
+    <!--<div>
+        <img src='../../assets/img/independent.png'>
+    </div>-->
+
+    <div>
+      <mat-card class= "mat-elevation-z4" >
+          <mat-card-header class="header1">
+              <mat-card-title>
+                Your Mission
+              </mat-card-title>
+          </mat-card-header>
+
+          <mat-card-content>
+            <br>
+            <br> View mission sent by Admin.
+              <br><br><br>
+              <button mat-raised-button color=primary routerLink="/viewmission"
+              routerLinkactive="active" [queryParams]="{d_id: d_id}"> View Mission</button>
+          </mat-card-content>
+      </mat-card>
+  </div>
+
+  <div>
+    <br><br><br><br>      <br><br><br><br>
+
+    <img src='../../assets/img/independent.png'>
+</div>
+</div>
+

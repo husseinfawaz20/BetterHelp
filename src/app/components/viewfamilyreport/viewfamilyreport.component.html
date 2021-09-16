@@ -1,0 +1,50 @@
+<mat-toolbar color="primary" class="app-header">
+  <div><a routerLink="/adminhome" class="positronx">BetterHelp</a></div>
+</mat-toolbar>
+<router-outlet></router-outlet>
+
+
+<br><br><br><br><br><br>
+<h1><b> Family Report : ID - {{family_id}}</b></h1>
+
+<table id="families" border="1">
+  <tr>
+    <th *ngFor="let col of columns">{{col}}</th>
+  </tr>
+
+<tr>
+  <td> <b>MUNICIPALITY </b></td>
+  <td>
+    <tr *ngFor="let admin of familiesAdmin; let i=index">
+      <td>{{admin.AMOUNT}} </td>
+    </tr>
+  </td>
+  <td>
+    <tr *ngFor="let admin of familiesAdmin; let i=index">
+      <td>{{admin.START_TIME|date: 'MMM d, y, h:mm a'}} </td>
+    </tr>
+  </td>
+  <td>{{totalAdmin}}</td>
+
+</tr>
+
+
+<tr>
+  <td> <b>INDEPENDENT </b></td>
+  <td>
+    <tr *ngFor="let admin of familiesIndependent; let i=index">
+      <td>{{admin.AMOUNT}} </td>
+    </tr>
+  </td>
+  <td>
+    <tr *ngFor="let admin of familiesIndependent; let i=index">
+      <td>{{admin.START_TIME|date: 'MMM d, y, h:mm a'}} </td>
+    </tr>
+  </td>
+  <td>{{totalIndependent}}</td>
+</tr>
+
+</table>
+<br><br><br>
+<button mat-stroked-button color="accent" class="btn-block" routerLink="/viewfamilies"
+[queryParams]="{id: admin_id}">Back</button>

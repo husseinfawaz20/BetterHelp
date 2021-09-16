@@ -1,0 +1,29 @@
+
+<mat-toolbar color="primary" class="app-header">
+    <div><a routerLink="/adminhome" class="positronx">BetterHelp</a></div>
+  </mat-toolbar>
+  <router-outlet></router-outlet>
+
+<br><br><br><br><br><br>
+<h1><b> Delegators : </b></h1>
+
+<table id="delegators" border="1">
+    <tr>
+      <th *ngFor="let col of columns">{{col}}</th>
+    </tr>
+    <tr *ngFor="let admin of delegators; let i=index">
+      <td>   {{admin.D_ID}}  </td>
+      <td>  {{admin.FIRST_NAME}}  </td>
+      <td >  {{admin.LAST_NAME}} </td>
+      <td>  {{admin.EMAIL}} </td>
+      <td>  {{admin.PHONE_NUMBER}} </td>
+      <td>  {{admin.BIRTHDAY|date: 'MMM d, y'}} </td>
+      <td>  {{admin.PLACE}} </td>
+      <td>  {{admin.PASSWORD}} </td>
+
+
+    </tr>
+  </table>
+<br><br><br>
+  <button mat-stroked-button color="accent" class="btn-block"
+   routerLink="/adminhome" [queryParams]="{id: admin_id}">Back</button>

@@ -1,0 +1,62 @@
+<mat-toolbar color="primary" class="app-header">
+    <div><a routerLink="/adminhome" class="positronx">BetterHelp</a></div>
+  </mat-toolbar>
+  <router-outlet></router-outlet>
+
+  <br><br><br>
+
+  <div class="login-wrapper" fxLayout="row" fxLayoutAlign="center center">
+    <mat-card class="box">
+      <mat-card-header>
+        <mat-card-title>Register Independent</mat-card-title>
+      </mat-card-header>
+
+      <form class="example-form" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+
+        <mat-card-content>
+          <mat-form-field class="example-full-width">
+            <input required matInput placeholder="First Name" formControlName="firstName">
+           </mat-form-field>
+
+          <mat-form-field class="example-full-width">
+            <input required matInput placeholder="Last Name" formControlName="lastName">
+          </mat-form-field>
+
+          <mat-form-field class="example-full-width">
+            <input required matInput placeholder="Email" formControlName="email" >
+          </mat-form-field>
+
+          <mat-form-field class="example-full-width">
+            <input required matInput placeholder="Phone Number" formControlName="phoneNumber">
+          </mat-form-field>
+
+          <mat-form-field class="example-full-width">
+            <input required type="date" matInput placeholder="Birthday" formControlName="birthday">
+          </mat-form-field>
+
+          <mat-form-field class="example-full-width">
+            <mat-label> Region</mat-label>
+            <mat-select formControlName="region">
+              <mat-option required [value]="region" *ngFor="let region of Region">{{region}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <mat-form-field class="example-full-width">
+            <input required type="password" matInput placeholder="Password" formControlName="password">
+          </mat-form-field>
+
+
+
+        </mat-card-content>
+
+        <button mat-stroked-button color="primary" class="btn-block"
+         [disabled]="!this.registerForm.valid" onClick="history.go(-1);">Register</button>
+        <mat-card-title><br></mat-card-title>
+
+        <button mat-stroked-button color="accent" class="btn-block"
+         routerLink="/adminhome" [queryParams]="{id: admin_id}">Back</button>
+
+      </form>
+    </mat-card>
+  </div>

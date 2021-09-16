@@ -1,0 +1,21 @@
+.mat-card{
+  margin-top: 200px;
+  margin-bottom: 10px;
+  margin-right:10px;
+  margin-left:10px;
+  height:250px;
+  width:320px;
+}
+
+.header1{
+  background-color: peachpuff ;
+  padding: 5px;
+}
+
+.mat-card{
+  padding:0;
+}
+
+.mat-card-content{
+  padding: 5px;
+}

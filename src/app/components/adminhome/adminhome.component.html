@@ -1,0 +1,117 @@
+
+<mat-toolbar color="primary" class="app-header">
+  <div><a routerLink="adminhome" class="positronx">BetterHelp</a></div>
+  <span class="nav-tool-items">
+    <a mat-button routerLink="/"  mat-raised-button routerLinkActive="active">Log Out</a>
+  </span>
+</mat-toolbar>
+<router-outlet></router-outlet>
+
+
+<br><br>
+<br><br>
+<h1> <b>Welcome ADMIN-{{admin_id}}</b></h1>
+
+<div fxLayout="column" fxLayoutAlign="space-between center" >
+   <div>
+       <img src='../../assets/img/concept-new-team-member-welcome-260nw-1327428803-removebg-preview.png'>
+   </div>
+
+   <div fxLayout="row">
+
+
+    <div>
+        <mat-card class= "mat-elevation-z4 cardc">
+            <mat-card-header>
+                <mat-card-title>
+                    Register
+                </mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <button mat-button color=primary routerLink="/register" routerLinkactive="active" [queryParams]="{id: admin_id}"> Admin</button><br>
+                <button mat-button color=primary routerLink="/registerdelegator" [queryParams]="{id: admin_id}">
+                   Delegator</button> <br>
+                <button mat-button color=primary routerLink="/registerindependent"  [queryParams]="{id: admin_id}"> Independent </button><br>
+                <button mat-button color=primary routerLink="/registerfamilies" [queryParams]="{id: admin_id}"> Family</button>
+            </mat-card-content>
+        </mat-card>
+    </div>
+
+       <div>
+           <mat-card class= "mat-elevation-z4 cardc">
+             <mat-card-header>
+                 <mat-card-title>
+                     View Information
+                 </mat-card-title>
+              </mat-card-header>
+              <mat-card-content>
+                <button mat-button color=primary routerLink="/viewadmins" [queryParams]="{id: admin_id}"> Admins</button><br>
+                  <button mat-button color=primary routerLink="/viewdelegators" [queryParams]="{id: admin_id}"> Delegators</button> <br>
+                  <button mat-button color=primary routerLink="/viewindependents" [queryParams]="{id: admin_id}" >Independent </button><br>
+                  <button mat-button color=primary routerLink="/viewfamilies" [queryParams]="{id: admin_id}" > Families</button> <br>
+                  <br>
+              </mat-card-content>
+           </mat-card>
+       </div>
+
+
+
+
+       <div>
+        <mat-card class= "mat-elevation-z4 cardc">
+            <mat-card-header class="header1" >
+                <mat-card-title>
+                   <p alignment="center">Missions</p>
+                </mat-card-title>
+
+            </mat-card-header>
+            <mat-card-content>
+                <br>
+                Enter the amount donated to a specific family<br> and send a mission to the delegator.<br><br><br>
+                <button mat-raised-button color=primary routerLink="/donate" [queryParams]="{id: admin_id}"
+                routerLinkactive="active"> Send Mission</button>
+                <br><br>
+                <button mat-raised-button color=primary routerLink="/viewadminmission"
+                [queryParams]="{id: admin_id}" routerLinkactive="active">View Missions</button>
+            </mat-card-content>
+        </mat-card>
+    </div>
+
+
+ <!--
+    <div>
+        <mat-card class= "mat-elevation-z4 cardc">
+            <mat-card-header class="header1">
+                <mat-card-title>
+                    Food stock
+                </mat-card-title>
+
+            </mat-card-header>
+            <mat-card-content>
+                <br><br>
+                Enter the stock donated and its quantity.<br><br><br>
+                <button mat-raised-button color=primary routerLink="/donatefood" routerLinkactive="active"> Enter Food Aid</button><br>
+            </mat-card-content>
+        </mat-card>
+    </div>
+
+-->
+       <div>
+           <mat-card class= "mat-elevation-z4 cardc">
+           <mat-card-header>
+           <mat-card-title>
+               Assign Families
+           </mat-card-title>
+           </mat-card-header>
+           <mat-card-content>
+             Assign certain families to specific <br> Independent Delegators.
+             <br><br><br>
+               <button mat-raised-button color=primary routerLink="/assignfamily"
+               [queryParams]="{id: admin_id}" routerLinkactive="active">Assign Family</button>
+           </mat-card-content>
+           </mat-card>
+       </div>
+
+</div>
+
+

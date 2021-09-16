@@ -1,0 +1,31 @@
+
+<mat-toolbar color="primary" class="app-header">
+  <div><a routerLink="adminhome" class="positronx">BetterHelp</a></div>
+  <span class="nav-tool-items">
+    <a mat-button routerLink="/login"  mat-raised-button routerLinkActive="active">Log Out</a>
+  </span>
+</mat-toolbar>
+<router-outlet></router-outlet>
+
+<br><br><br><br><br><br><br><br>
+<h1><b>DELEGATOR-{{d_id}} Missions : </b></h1>
+<table id="mission" border="1">
+  <tr>
+    <th *ngFor="let col of columns">{{col}}</th>
+  </tr>
+  <tr *ngFor="let admin of mission; let i=index">
+    <td>   {{admin.MISS_ID}}  </td>
+    <td>  {{admin.ADMIN_ID}}  </td>
+    <td >  {{admin.PF_ID}} </td>
+    <td>  {{admin.FAMILY_NAME}}  </td>
+    <td>  {{admin.FATHER_NAME}} </td>
+    <td>  {{admin.PHONE_NUMBER}} </td>
+    <td>  {{admin.AMOUNT}} </td>
+    <td>  {{admin.START_TIME|date: 'MMM d, y, h:mm a'}} </td>
+    <td>  Accomplished <input type="checkbox" [(ngModel)]="isChecked[i]"
+      (change)="onChange(isChecked[i]?'1':'0',admin.MISS_ID)" [disabled]="isChecked[i] == 1" > </td>
+
+  </tr>
+</table>
+<br><br><br>
+<button mat-stroked-button color="accent" class="btn-block" routerLink="/delegatehome" [queryParams]="{d_id: d_id}">Back</button>

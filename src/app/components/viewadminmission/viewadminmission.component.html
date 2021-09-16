@@ -1,0 +1,30 @@
+
+<mat-toolbar color="primary" class="app-header">
+  <div><a routerLink="adminhome" class="positronx">BetterHelp</a></div>
+  <span class="nav-tool-items">
+    <a mat-button routerLink="/"  mat-raised-button routerLinkActive="active">Log Out</a>
+  </span>
+</mat-toolbar>
+<router-outlet></router-outlet>
+
+<br><br><br><br><br><br><br>
+<h1><b> Missions Sent :</b></h1>
+
+<table id="mission" border="1">
+  <tr>
+    <th *ngFor="let col of columns">{{col}}</th>
+  </tr>
+  <tr *ngFor="let admin of mission; let i=index">
+    <td>   {{admin.MISS_ID}}  </td>
+    <td>  {{admin.D_ID}}  </td>
+    <td>  {{admin.START_TIME|date: 'MMM d, y, h:mm a'}}  </td>
+    <td>  {{admin.AMOUNT}} </td>
+    <td>  {{admin.STATE}} </td>
+
+  </tr>
+</table>
+<br><br><br>
+<div align="center">
+ <button mat-stroked-button color="accent" class="btn-block"
+ routerLink="/adminhome" [queryParams]="{id: admin_id}">Back</button>
+</div>
